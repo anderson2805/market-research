@@ -1,0 +1,6 @@
+.env
+.cursorignore
+__pycache__
+.streamlit/secrets.toml
+*.json
+testbench

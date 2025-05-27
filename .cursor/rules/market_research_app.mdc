@@ -1,0 +1,37 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Market Research Application Overview
+
+This document outlines the functionality of the Streamlit-based market research application. The main application logic is managed within py files `services`, UI in `pages` folder and LLM clients in `clients` folder.
+
+## Core Features
+
+The application enables users to search for companies and related information using multiple AI-powered search engines: Gemini, Perplexity, and OpenAI.
+
+### Input Methods
+
+Users can provide company information in two ways:
+
+1.  **Single Company Input:** A text input field allows users to enter the name of a single company for research.
+2.  **Bulk Company Input:** Users can upload a CSV or Excel file containing a list of companies.
+    *   If a file is uploaded, the application will prompt the user to specify which column in the file contains the company names.
+3.  **Industries:** Focus the search on companies within specific industries.
+
+### Search Filtering
+
+To refine the search for related companies, users can specify:
+
+*   **Country or Region:** Filter recommended companies based on their geographical location.
+
+
+## Page Structure
+
+The application is organized into several pages, as defined in `[app.py](mdc:app.py)`:
+
+*   **Search Page (`pages/market_research/search.py`):** Contains the input fields for company names and search filters.
+*   **Results Page (`pages/market_research/results.py`):** Displays the search results obtained from the different search engines.
+*   **FAQ Page (`pages/market_research/faq.py`):** Provides answers to frequently asked questions about the application.
+

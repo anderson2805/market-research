@@ -1,0 +1,29 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Application Services
+
+The `services/` directory centralizes the core business logic and functionalities of the application. These services are typically consumed by the Streamlit pages or background workers.
+
+## Key Services:
+
+- **Opinion Classifier Service**: `[services/opinion_classifier.py](mdc:services/opinion_classifier.py)`
+    - Provides functionality for classifying opinions based on various attributes.
+    - Defines Pydantic models (`CommentDataEnrichment`, `CommentDataEnrichmentList`) for structured output from AI models.
+    - Includes `classify_attributes_batch` for processing a single batch of comments and `process_batches_concurrently` for orchestrating asynchronous classification of multiple batches.
+    - This service is utilized by the Opinion Classifier v2 page: `[pages/opinion_classifier_v2/create.py](mdc:pages/opinion_classifier_v2/create.py)`.
+
+- **Translation Service**: `[services/translate.py](mdc:services/translate.py)`
+    - Offers text translation capabilities, likely using one of the AI clients (e.g., OpenAI).
+    - Defines Pydantic models (`TranslationResult`, `TranslationResultList`) for structured translation outputs.
+    - Contains `translate_text_batch` for translating a batch of texts and `translate_dataframe_column` for translating an entire DataFrame column, with support for progress and status callbacks for UI updates.
+    - Used in `[pages/opinion_classifier_v2/create.py](mdc:pages/opinion_classifier_v2/create.py)` and `[pages/opinion_classifier/create.py](mdc:pages/opinion_classifier/create.py)` to translate non-English opinions.
+
+- **Postulation Deep Research Service**: `[services/postulate_dr.py](mdc:services/postulate_dr.py)`
+    - Implements logic for performing deep research to generate narrative postulations based on input content (article or topic).
+    - Defines Pydantic models (`NarrativePostulation`, `NarrativePostulationList`) to structure the AI's response, including title, postulation, rationale, source references, and confidence score.
+    - The main function `postulate_with_deep_research` likely coordinates with an AI client (e.g., Gemini Client's `gemini_deep_research` method) to perform the analysis and generate scenarios.
+    - This service is probably used by the `[worker.py](mdc:worker.py)` to process postulation jobs from the database.
+

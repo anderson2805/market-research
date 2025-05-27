@@ -1,0 +1,4 @@
+streamlit
+pandas
+openpyxl
+streamlit-tags==1.2.5 

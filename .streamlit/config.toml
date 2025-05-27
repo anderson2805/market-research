@@ -1,0 +1,22 @@
+[theme]
+base="light"
+primaryColor="#24437C"
+backgroundColor="#FFFFFF"
+secondaryBackgroundColor="#F8F9FA"
+textColor="#333333"
+font="sans serif"
+
+[theme.sidebar]
+backgroundColor="#274C77"
+textColor="#FFFFFF" 
+
+[browser]
+gatherUsageStats = false
+
+[client]
+# Show only externally-set options (hides dev toolbar, stop button, running animation)
+toolbarMode = "minimal"
+
+[server]
+enableCORS = false
+enableXsrfProtection = false

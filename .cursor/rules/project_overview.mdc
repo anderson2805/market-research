@@ -1,0 +1,25 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Project Overview
+
+This project, `erk-ai-playground`, is a Streamlit-based application showcasing experimental AI-powered features.
+
+## Main Application
+- The main entry point for the Streamlit application is `[app.py](mdc:app.py)`.
+- Styling for the sidebar is managed by `[style_utils.py](mdc:style_utils.py)`.
+- Streamlit application configuration can be found in `[.streamlit/config.toml](mdc:.streamlit/config.toml)` and secrets in `[.streamlit/secrets.toml](mdc:.streamlit/secrets.toml)`.
+- Environment variables are loaded from `[.env](mdc:.env)`.
+
+## Key Directories
+- `pages/`: Contains subdirectories for different features accessible as Streamlit pages:
+    - `opinion_classifier/`: Original opinion classification feature.
+    - `opinion_classifier_v2/`: An updated version of the opinion classification feature.
+    - `scenario_postulate/`: Feature for exploring future scenarios.
+- `clients/`: Houses client modules for interacting with various AI APIs (Gemini, OpenAI, Perplexity).
+- `services/`: Contains business logic and service integrations for features like opinion classification, translation, and scenario postulation.
+- `db/`: Includes the SQLite database `[postulations.db](mdc:db/postulations.db)` used by the application.
+- `testbench/`: Likely contains scripts for testing or experimenting with different project components.
+
