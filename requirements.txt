@@ -1,4 +1,9 @@
 streamlit
 pandas
 openpyxl
-streamlit-tags==1.2.5 
+streamlit-tags==1.2.5
+pydantic
+tenacity
+dotenv
+openai
+instructor
